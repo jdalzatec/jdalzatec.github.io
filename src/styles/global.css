@@ -7,12 +7,14 @@ body {
     margin: 3rem auto;
     margin-top: 10px;
     max-width: 600px;
+    padding: 10px;
+    padding-top: 0px;
 }
 
 
 a {
     text-shadow: none;
-    color: #e63946;
+    color: #1d3557;
     text-decoration: none;
     background-image: none;
 }
@@ -37,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 3px solid #1d3557;
     padding: 10px;
     background-color: aliceblue;
+    margin-bottom: 10px;
 }
 
 

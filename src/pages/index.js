@@ -1,12 +1,14 @@
 import React from "react"
 import mypicture from "../images/jdalzatec.jpg"
 import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
 
 import "../styles/global.css"
 
 export default () => (
   <Layout>
     <div id="about-me-container">
+      <Helmet title={`jdalzatec's blog`} />
       <div id="div-about-me">
         <h2 style={{textAlign: "center"}}>Nice to meet you !</h2>
         <br />
