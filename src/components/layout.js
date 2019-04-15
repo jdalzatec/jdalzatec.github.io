@@ -14,7 +14,7 @@ export default ({ children }) => (
             <header id="top-panel">
                 <div id="links">
                     <h3 style={{ display: "inline" }}>
-                        <Link to="/" style={{ color: "#1d3557" }}>
+                        <Link to="/">
                             <div style={{display: "inline", alignItems: "middle"}}>
                                 <img style={{width: "5%", float: "left", margin: "0px"}} src={myicon} alt="icon" />
                                 <span style={{marginLeft: "10px"}}>jdalzatec's blog</span>

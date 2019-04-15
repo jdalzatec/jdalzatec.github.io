@@ -14,6 +14,7 @@ body {
 
 a {
     text-shadow: none;
+    font-weight: bold;
     color: #1d3557;
     text-decoration: underline;
     background-image: none;
@@ -21,7 +22,7 @@ a {
 
 
 a:hover {
-    font-weight: bolder;
+    color: seagreen;
 }
 
 
@@ -41,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: aliceblue;
     margin-bottom: 10px;
 }
+
 
 
 #links {

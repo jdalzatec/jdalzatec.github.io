@@ -14,11 +14,11 @@ export default function Index({ data }) {
               return (
                 <li key={post.id}>
                   <div>
-                    <h4>
-                      <Link to={post.frontmatter.path} style={{ color: "#1d3557" }}>
-                        {post.frontmatter.title}
-                      </Link>
-                    </h4>
+                      <h4>
+                        <Link to={post.frontmatter.path}>
+                          {post.frontmatter.title}
+                        </Link>
+                      </h4>
                     <p>{post.frontmatter.date}</p>
                   </div>
                 </li>
