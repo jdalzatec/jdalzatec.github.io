@@ -2,6 +2,14 @@ html {
     background-color: #f1faee;
 }
 
+
+body {
+    margin: 3rem auto;
+    margin-top: 10px;
+    max-width: 600px;
+}
+
+
 a {
     text-shadow: none;
     color: #e63946;
@@ -9,15 +17,42 @@ a {
     background-image: none;
 }
 
+
 a:hover {
     font-weight: bolder;
 }
 
 
-#about-me-container {
-    margin: 3rem auto;
-    max-width: 600px;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: #1d3557;
 }
+
+
+#top-panel {
+    position: relative;
+    width: 100%;
+    border-top: 3px solid #1d3557;
+    border-bottom: 3px solid #1d3557;
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+
+#links {
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@media (max-width: 425px) {
+    #navigation-links {
+        display: none;
+    }
+}
+
 
 #div-about-me {
     border: 3px solid #1d3557;
@@ -26,11 +61,13 @@ a:hover {
     padding: 10px;
 }
 
+
 @media (max-width: 500px) {
     #mypicture {
         display: none;
     }
 }
+
 
 #mypicture {
     width: 35%;
@@ -40,13 +77,9 @@ a:hover {
     margin-bottom: 0px;
 }
 
+
 #description {
     display: inline;
     text-align: justify;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-    color: #1d3557;
-}
