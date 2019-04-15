@@ -11,3 +11,10 @@ eeeeeeeo
 $$
 \sum_{i=0}^{\infty}
 $$
+
+```python{numberLines: true}{4-5}
+def main():
+    print("hola mundo")
+    a = 69
+    print(a)
+```

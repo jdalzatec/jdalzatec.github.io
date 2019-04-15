@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import myicon from "../images/icon.png"
 
 
 const ListLink = props => (
@@ -14,13 +15,16 @@ export default ({ children }) => (
                 <div id="links">
                     <h3 style={{ display: "inline" }}>
                         <Link to="/" style={{ color: "#1d3557" }}>
-                            jdalzatec's blog
+                            <div style={{display: "inline", alignItems: "middle"}}>
+                                <img style={{width: "5%", float: "left", margin: "0px"}} src={myicon} alt="icon" />
+                                <span style={{marginLeft: "10px"}}>jdalzatec's blog</span>
+                            </div>
                         </Link>
                     </h3>
 
                     <ul id="navigation-links" style={{ listStyle: "none", float: "right", margin: 0 }}>
                         <ListLink to="/posts/">Posts</ListLink>
-                        <ListLink to="/projects/">Projects</ListLink>
+                        {/* <ListLink to="/projects/">Projects</ListLink> */}
                         <ListLink to="/contact/">Contact</ListLink>
                     </ul>
                 </div>

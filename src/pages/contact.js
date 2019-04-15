@@ -1,7 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Section from "../components/section"
-import { Helmet } from "react-helmet"
 
 
 export default () => (

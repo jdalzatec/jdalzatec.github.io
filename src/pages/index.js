@@ -2,6 +2,7 @@ import React from "react"
 import mypicture from "../images/jdalzatec.jpg"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
+import { Link } from "gatsby"
 
 import "../styles/global.css"
 
@@ -27,6 +28,10 @@ export default () => (
         </div>
         
       </div>
+
+      <h1 style={{ textAlign: "center", marginTop: "10px"}}>
+      <Link to="/posts/">Go to Posts</Link>
+      </h1>
     </div>
   </Layout>
 )

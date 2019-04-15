@@ -9,7 +9,7 @@ export default function Index({ data }) {
     <Section name="Posts">
         <ul>
           {posts
-            .filter(post => post.node.frontmatter.title.length > 0)
+            .filter(post => post.node.frontmatter.title.length > 0 && !post.node.fileAbsolutePath.includes("/projects/"))
             .map(({ node: post }) => {
               return (
                 <li key={post.id}>
