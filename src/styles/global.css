@@ -1,7 +1,52 @@
 html {
-    background-color: lavenderblush;
+    background-color: #f1faee;
 }
 
 a {
     text-shadow: none;
+    color: #e63946;
+    text-decoration: none;
+    background-image: none;
+}
+
+a:hover {
+    font-weight: bolder;
+}
+
+
+#about-me-container {
+    margin: 3rem auto;
+    max-width: 600px;
+}
+
+#div-about-me {
+    border: 3px solid #1d3557;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+@media (max-width: 500px) {
+    #mypicture {
+        display: none;
+    }
+}
+
+#mypicture {
+    width: 35%;
+    float: right;
+    padding: 0px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+#description {
+    display: inline;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: #1d3557;
 }

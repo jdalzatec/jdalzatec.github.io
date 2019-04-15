@@ -1,44 +1,27 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import mypicture from "../images/jdalzatec.jpg"
 
-export default function Index({ data }) {
-  const posts = data.allMarkdownRemark.edges
-  return (
-    <div className="blog-posts">
-      {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .map(({ node: post }) => {
-          return (
-            <div className="blog-post-preview" key={post.id}>
-              <h1>
-                <Link to={post.frontmatter.path}>
-                  {post.frontmatter.title}
-                </Link>
-              </h1>
-              <h2>{post.frontmatter.date}</h2>
-              <p>{post.excerpt}</p>
-            </div>
-          )
-        })}
+import "../styles/global.css"
+
+export default () => (
+  <div id="about-me-container">
+    <div id="div-about-me">
+      <h1 style={{textAlign: "center"}}>Nice to meet you !</h1>
+      <br />
+      <img id="mypicture" src={mypicture} alt="me" />
+      <div id="description">
+        <p>
+
+        My name is <strong style={{ color: "#1d3557"}}>Juan David Alzate Cardona</strong>.
+        I am a Physics Engineer, highly passionate in computational physics.
+        I am also an amateur programmer with a high interest in Data Science.
+        I am from <a target="_" href="https://en.wikipedia.org/wiki/Manizales">Manizales</a>, <a target="_" href="https://en.wikipedia.org/wiki/Caldas_Department">Caldas</a>, <a target="_" href="https://en.wikipedia.org/wiki/Colombia">Colombia</a>.
+  
+        For more details, see my ré­sumé.
+
+        </p>
+      </div>
+      
     </div>
-  )
-}
-
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-        }
-      }
-    }
-  }
-`
+  </div>
+)
