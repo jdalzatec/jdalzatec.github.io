@@ -12,6 +12,7 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-typography": "^2.2.13",
     "gatsby-remark-katex": "^3.0.4",
     "gatsby-remark-mathjax": "^1.0.0",
     "gatsby-source-filesystem": "^2.0.29",
@@ -21,7 +22,10 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
