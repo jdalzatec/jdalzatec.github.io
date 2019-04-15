@@ -41,21 +41,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     background-color: aliceblue;
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
 }
 
-
-
-#links {
-    max-width: 600px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-
-@media (max-width: 425px) {
-    #navigation-links {
-        display: none;
-    }
+#home-link {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
 }
 
 
