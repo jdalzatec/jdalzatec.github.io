@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "jdalzatec",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "jdalzatec's blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Juan David Alzate Cardona <jdalzatec@unal.edu.co>",
   "dependencies": {
-    "gatsby": "^2.3.16",
+    "gatsby": "^2.3.23",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-manifest": "^2.0.28",
@@ -19,6 +19,7 @@
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "gh-pages": "^2.0.1",
     "katex": "^0.10.1",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
@@ -42,7 +43,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "npm run build && node ./scripts/deploy-github"
   },
   "repository": {
     "type": "git",

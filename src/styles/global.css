@@ -89,6 +89,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+p {
+    text-align: justify;
+}
+
 
 
 /**
@@ -98,28 +102,28 @@ h1, h2, h3, h4, h5, h6 {
 /* Adjust the position of the line numbers */
 .gatsby-highlight pre[class*="language-"].line-numbers {
     padding-left: 2.8em;
-  }
-  
-  /**
-   * If you only want to use line numbering
-   */
-  
-  .gatsby-highlight {
+}
+
+/**
+* If you only want to use line numbering
+*/
+
+.gatsby-highlight {
     background-color: #272822;
     border-radius: 0.3em;
     margin: 0.5em 0;
     padding: 1em;
     overflow: auto;
-  }
-  
-  .gatsby-highlight pre[class*="language-"].line-numbers {
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
     padding: 0;
     padding-left: 2.8em;
     overflow: initial;
     font-size: 0.8rem;
-  }
+}
 
-  .gatsby-highlight-code-line {
+.gatsby-highlight-code-line {
     background-color: gray;
     display: block;
     margin-right: -1em;
@@ -127,4 +131,4 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 1em;
     padding-left: 0.75em;
     border-left: 0.25em solid crimson;
-  }
+}
