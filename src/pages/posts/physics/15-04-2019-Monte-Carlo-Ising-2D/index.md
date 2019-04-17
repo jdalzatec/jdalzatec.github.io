@@ -7,16 +7,16 @@ title: "Simulation of a Ising 2D system using the Monte Carlo method and the Met
 <div style="background-color: gold">You could download a jupyter notebook with this tutorial from <a href="notebook.ipynb">here</a>.</div>
 <br />
 
-This tutorial was made in order to give a practical guide for the elaboration of a Monte Carlo program for the simulation of a Ising 2D system. This program is built in **python3**. The complexity of this code is minimal. However, this kind of simulations **is not** efficient in python. For this reason, I recommend you to use other programming language like **c++** or **fortran** because they are high performance programming laguages.
+This tutorial was made in order to give a practical guide for the elaboration of a Monte Carlo program for the simulation of a Ising 2D system. This program is built in **python3**. The complexity of this code is minimal. However, this kind of simulations **is not** efficient in python. For this reason, I recommend you to use other programming language like **c++** or **fortran** since they are high performance programming laguages.
 
-We are going to simulate an [Ising 2D system](https://en.wikipedia.org/wiki/Square-lattice_Ising_model), which was solved by Lard Onsager in 1944 in an analytical way. The analytical solution gives the following expression for the critical temperature $\left(T_c\right)$:
+We are going to simulate an [Ising 2D system](https://en.wikipedia.org/wiki/Square-lattice_Ising_model), which was solved analitically by Lard Onsager in 1944. The analytical solution gives the following expression for the critical temperature $\left(T_c\right)$:
 
 $$
 \frac{k_{B}T_{c}}{J} = \frac{2}{\ln\left(1 + \sqrt{2}\right)} \approx 2.26918531421
 $$
 where $k_B$ is the Boltzmann constant and $J$ is the exchange constant.
 
-What we want to do is to simulate this system and compare this valure with one obtaines by using Monte Carlo method.
+What we want to do is to simulate this system and compare this value with one obtained by using Monte Carlo method.
 
 The Hamiltonian is given by
 
@@ -102,7 +102,7 @@ print(sites)
     [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (6, 0), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6), (6, 7), (6, 8), (6, 9), (7, 0), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (8, 0), (8, 1), (8, 2), (8, 3), (8, 4), (8, 5), (8, 6), (8, 7), (8, 8), (8, 9), (9, 0), (9, 1), (9, 2), (9, 3), (9, 4), (9, 5), (9, 6), (9, 7), (9, 8), (9, 9)]
 
 
-We could plot the lattice for visualizing the system:
+We could plot the lattice for the sake of visualization of the system:
 
 
 ```python
@@ -118,9 +118,9 @@ pyplot.show()
 ![png](output_12_0.png)
 
 
-As you can see, we have a lattice of $10\times10$ sites, due to **lenght** is equal to 10.
+As you can see, we have a lattice of $10\times10$ sites, since the **lenght** parameter is to 10.
 
-Now we need a function to get a random configuration. A random configuration consists in to assign randomly a spin value for each site in the lattice. In is worthy to say that in our system we just have two possible states for the spins: -1 or 1, corresponding to $\downarrow$ or $\uparrow$ states, respectively.
+Now we need a function to get a random configuration. A random configuration consists in to assign randomly a spin value for each site in the lattice. It is worthy to say that in our system we just have two possible states for the spins: -1 or 1, corresponding to $\downarrow$ or $\uparrow$ states, respectively.
 
 
 ```python
@@ -145,7 +145,7 @@ print(spins.values())
     dict_values([1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, 1, 1, -1, -1, -1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 1])
 
 
-Now, we could plot the state of our system for the **spins** configuration. For this, let's to write a function to plot the state using arrows:
+Now, we could plot the state of our system for the **spins** configuration. For this, let's write a function to plot the state using arrows:
 
 
 ```python
@@ -177,7 +177,7 @@ plot_state()
 
 As you can observe, the random configuration is approximately composed by the same number of up and down states.
 
-Ok. Until now, we have a list of **sites**, composed by **N** tuples $\left(i, j\right)$, and a dictionary **spins**, composed by **N** keys corresponding to the pairs $\left(i, j\right), whose values are -1 or 1.
+Ok. Until now, we have a list of **sites**, composed by **N** tuples $\left(i, j\right)$, and a dictionary **spins**, composed by **N** keys corresponding to the pairs $\left(i, j\right)$, whose values are -1 or 1.
 
 Perfect! Let's plot our lattice with the corresponding pair for each site:
 
@@ -245,7 +245,7 @@ def total_energy():
     return 0.5 * energy
 ```
 
-We are going to employ the **local_energy** function in the [Metropolis algorithm](http://hua-zhou.github.io/teaching/st758-2014fall/top10/metropolis.pdf) to compute the difference between the new and old energy. We are going to implement the Metropolis algorithm inversing the site's spin firstly and watching when the acceptance of this is not favored. In that case, it is rejected the spin inversion and we need to change the spin newly.
+We are going to employ the **local_energy** function in the [Metropolis algorithm](http://hua-zhou.github.io/teaching/st758-2014fall/top10/metropolis.pdf) to compute the difference between the new and old energy. We are going to implement the Metropolis algorithm inverting the site's spin firstly and then keep track of this movement, it is to say, whether the acceptance of it is favored or not. In that case, it is rejected the spin inversion and we need to change the spin newly.
 
 
 ```python
@@ -269,7 +269,7 @@ def monte_carlo_step(T):
         metropolis(sites[index], T)
 ```
 
-The next step is to make a function to perform a temperature step. This function requires both the amount of MCS and the temperature and it will return two arrays which correspond to the magnetization and energy of the system as functions of the Monte Carlo steps. It is to said, return the evolution in the magnetization and energy.
+The next step is to make a function to perform a temperature step. This function requires both the amount of MCS and the temperature and it will return two arrays which correspond to the magnetization and energy of the system as functions of the Monte Carlo steps. It is to say, return the temperature evolution of the magnetization and energy.
 
 
 ```python
@@ -345,7 +345,7 @@ T_low = 0.001
 points = 101
 ```
 
-With this, we could compute a linspace between **T_high** and **T_low** and store it into **tempt**:
+With this, we could compute a linspace between **T_high** and **T_low** and store it into **temps**:
 
 
 ```python
@@ -367,7 +367,7 @@ data_energies = numpy.zeros(shape=(points, amount_mcs))
 data_magnetizations = numpy.zeros(shape=(points, amount_mcs))
 ```
 
-Finally, we need to make a **for** statement over **temps**. For each iteration, we saved the magnetization and energy into **data_magnetizations** and **data_energies**, respectively. This part is the one that requires more time. In a computer with Intel® Core™ i7-3612QM CPU @ 2.10GHz lasted about 27min 13s.
+Finally, we need to make a **for** statement over **temps**. For each iteration, we save the magnetization and energy into **data_magnetizations** and **data_energies**, respectively. This part is the one that requires more time. In a computer with Intel® Core™ i7-3612QM CPU @ 2.10GHz lasted about 27min 13s.
 
 
 ```python
@@ -389,7 +389,7 @@ plot_state()
 ![png](output_58_0.png)
 
 
-The next step consists in to plot the energy and magnetization. For this, we are going to discard the half of MCS for the relaxation. This quantity is named **tau**. Thus, we compute the mean of **data_energies** and **data_magnetizations**, after **tau**, for each temperature. As the evolution with respect to the MCS was saved in the axis=1, we need to compute the mean over the axis=1:
+The next step consists in to plot the energy and magnetization. For this, we are going to discard half of MCS for relaxation. This quantity is named **tau**. Thus, we compute the mean of **data_energies** and **data_magnetizations**, after **tau**, for each temperature. As the evolution with respect to the MCS was saved in the axis=1, we need to compute the mean over the axis=1:
 
 
 ```python
@@ -456,7 +456,7 @@ specific_heat = energy_std ** 2 / (kB * temps * temps)
 susceptibility = magnetization_std ** 2 / (kB * temps)
 ```
 
-Now, we can plot the last quantities as functions of the temperature. Let's to make a vertical line corresponding to the critical temperature for this system:
+Now, we can plot the last quantities as functions of the temperature. Let's make a vertical line corresponding to the critical temperature for this system:
 
 
 ```python
@@ -487,7 +487,7 @@ pyplot.show()
 
 As expected, both the specific heat and the magnetic susceptibility exhibit their maximum values at a temperature near to the critical temperature (dashed red line). However, it is worthy to say that the critical temperature is defined for a system with infinite length. For this reason, the peaks of the last figures are not exactly equal to the theoretical value for $T_c$.
 
-Perfect !!! At this point, we could play with this program and make simulations for other sizes or, even, compute other interesting quantities like Binder cumulants or correlation times. You should try it !
+Perfect !!! At this point, we could play with this program and make simulations for other sizes or, even, compute other interesting quantities like Binder cumulants or correlation times. You should try it by yourself !
 
 If you have any question or suggestion, don't hesitate to contact me at [jdalzatec@gmail.com](mailto:jdalzatec@gmail.com).
 
