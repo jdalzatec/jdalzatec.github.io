@@ -89,18 +89,15 @@ p {
 
 
 
-/**
- * If you already use line highlighting
- */
-
-/* Adjust the position of the line numbers */
-.gatsby-highlight pre[class*="language-"].line-numbers {
-    padding-left: 2.8em;
+.gatsby-highlight pre[class*="language-"] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+    font-size: 0.8rem;
 }
-
-/**
-* If you only want to use line numbering
-*/
 
 .gatsby-highlight {
     background-color: #272822;
@@ -108,7 +105,10 @@ p {
     margin: 0.5em 0;
     padding: 1em;
     overflow: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 
 .gatsby-highlight pre[class*="language-"].line-numbers {
     padding: 0;
