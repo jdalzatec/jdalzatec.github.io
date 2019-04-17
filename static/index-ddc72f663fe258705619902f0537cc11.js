@@ -1,0 +1,37 @@
+import React from "react"
+import mypicture from "../images/jdalzatec.jpg"
+import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
+import { Link } from "gatsby"
+
+import "../styles/global.css"
+
+export default () => (
+  <Layout>
+    <div id="about-me-container">
+      <Helmet title={`jdalzatec's blog`} />
+      <div id="div-about-me">
+        <h2 style={{textAlign: "center"}}>Nice to meet you !</h2>
+        <br />
+        <img id="mypicture" src={mypicture} alt="me" />
+        <div id="description">
+          <p>
+
+          My name is <strong style={{ color: "#1d3557"}}>Juan David Alzate Cardona</strong>.
+          I am a Physics Engineer, highly passionate in computational physics.
+          I am also an amateur programmer with a high interest in Data Science.
+          I am from <a target="_" href="https://en.wikipedia.org/wiki/Manizales">Manizales</a>, <a target="_" href="https://en.wikipedia.org/wiki/Caldas_Department">Caldas</a>, <a target="_" href="https://en.wikipedia.org/wiki/Colombia">Colombia</a>.
+    
+          For more details, see my ré­sumé.
+
+          </p>
+        </div>
+        
+      </div>
+
+      <h1 style={{ textAlign: "center", marginTop: "10px"}}>
+      <Link to="/posts/">Go to Posts</Link>
+      </h1>
+    </div>
+  </Layout>
+)
