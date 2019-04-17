@@ -4,9 +4,7 @@ date: "2019-04-14"
 title: "Simulation of a Ising 2D system using the Monte Carlo method and the Metropolis algorithm"
 ---
 
-
-
-<div style="background-color: gold">You could download a jupyter notebook with this tutorial from <a href="notebook.ipynb" download>here</a>.</div>
+<div style="background-color: gold">You could download a jupyter notebook with this tutorial from <a href="notebook.ipynb">here</a>.</div>
 <br />
 
 This tutorial was made in order to give a practical guide for the elaboration of a Monte Carlo program for the simulation of a Ising 2D system. This program is built in **python3**. The complexity of this code is minimal. However, this kind of simulations **is not** efficient in python. For this reason, I recommend you to use other programming language like **c++** or **fortran** because they are high performance programming laguages.
@@ -54,7 +52,7 @@ We are going to need some libraries for different purposes. Basically, the only 
 
 You could install both **numpy** and **maplotlib** using the following command in the console:
 
-```bash{numberLines: true}
+```bash
 pip install numpy matplotlib
 ```
 
@@ -63,7 +61,7 @@ However, if you are using python by means of [Anaconda](https://www.anaconda.com
 Let's start coding.
 
 
-```python{numberLines: true}{2}
+```python
 import numpy
 from matplotlib import pyplot
 from itertools import product
@@ -144,7 +142,7 @@ spins = random_config()
 print(spins.values())
 ```
 
-    dict_values([-1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1])
+    dict_values([1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, 1, 1, -1, -1, -1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 1])
 
 
 Now, we could plot the state of our system for the **spins** configuration. For this, let's to write a function to plot the state using arrows:
@@ -271,13 +269,6 @@ def monte_carlo_step(T):
         metropolis(sites[index], T)
 ```
 
-
-```python
-monte_carlo_step(0.01)
-```
-
-
-
 The next step is to make a function to perform a temperature step. This function requires both the amount of MCS and the temperature and it will return two arrays which correspond to the magnetization and energy of the system as functions of the Monte Carlo steps. It is to said, return the evolution in the magnetization and energy.
 
 
@@ -309,7 +300,6 @@ mags, enes = temperature_step(amount_mcs, T)
 ```
 
 
-
 ```python
 fig = pyplot.figure(figsize=(8, 4))
 ax = fig.add_subplot(121)
@@ -330,7 +320,7 @@ pyplot.show()
 ```
 
 
-![png](output_44_0.png)
+![png](output_43_0.png)
 
 
 As you can observe, both the magnetization and the energy tend to a fixed value as the MCS goes. Also, we could plot the final state for this simulation:
@@ -341,7 +331,7 @@ plot_state()
 ```
 
 
-![png](output_46_0.png)
+![png](output_45_0.png)
 
 
 In this case, we have obtained a perfect ferromagnetic state. However, in this simulation could have exhibited domain walls due to the low temperature and the lack of temperature cooling. Run this simulation several times and observe the different possible behaviors.
@@ -388,7 +378,6 @@ for ind_T, T in enumerate(temps):
     data_magnetizations[ind_T] = mags
 ```
 
-
 As expected, the final state corresponds to a ferromagnetic state, where all spins are pointing in the same direction.
 
 
@@ -397,7 +386,7 @@ plot_state()
 ```
 
 
-![png](output_59_0.png)
+![png](output_58_0.png)
 
 
 The next step consists in to plot the energy and magnetization. For this, we are going to discard the half of MCS for the relaxation. This quantity is named **tau**. Thus, we compute the mean of **data_energies** and **data_magnetizations**, after **tau**, for each temperature. As the evolution with respect to the MCS was saved in the axis=1, we need to compute the mean over the axis=1:
@@ -406,7 +395,7 @@ The next step consists in to plot the energy and magnetization. For this, we are
 ```python
 tau = amount_mcs // 2
 energy_mean = numpy.mean(data_energies[:, tau:], axis=1)
-magnetization_mean = numpy.abs(numpy.mean(data_magnetizations[:, tau:], axis=1))
+magnetization_mean = numpy.mean(numpy.abs(data_magnetizations[:, tau:]), axis=1)
 ```
 
 The shape of **temps**, **energy_mean** and **magnetization_mean** should be the same:
@@ -446,7 +435,7 @@ pyplot.show()
 ```
 
 
-![png](output_65_0.png)
+![png](output_64_0.png)
 
 
 Note that the magnetization is equal to 100 for low temperatures. This indicates that all the **N** sites are pointing in the same direction, as it is expected.
@@ -493,7 +482,7 @@ pyplot.show()
 ```
 
 
-![png](output_72_0.png)
+![png](output_71_0.png)
 
 
 As expected, both the specific heat and the magnetic susceptibility exhibit their maximum values at a temperature near to the critical temperature (dashed red line). However, it is worthy to say that the critical temperature is defined for a system with infinite length. For this reason, the peaks of the last figures are not exactly equal to the theoretical value for $T_c$.
